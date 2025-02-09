@@ -22,9 +22,9 @@ header {
   justify-content: space-between;
   padding: 10px 10px;
   z-index: 99;
-  /* background-color: grey;
-  backdrop-filter: blur(100px); */
-  opacity: 0.5;
+  background-color: grey;
+  backdrop-filter: blur(10px);
+  opacity: 0.6;
 }
 .head-left {
   display: flex;
@@ -170,7 +170,8 @@ header {
   margin: 25px 0;
   text-transform: uppercase;
   background: linear-gradient(
-    to right rosybrown,
+    to right,
+    rosybrown,
     rgb(221, 167, 66),
     lightyellow,
     lightgreen,
@@ -180,7 +181,7 @@ header {
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
   animation: animate-gradient 2.5s linear infinite;
 }
 @keyframes animate-gradient {
