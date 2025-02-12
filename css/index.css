@@ -296,3 +296,108 @@ header {
   grid-row: span 2;
   height: 83vh;
 }
+.contact-section {
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 100px;
+}
+.contact-section .img1 {
+  position: absolute;
+  top: 10%;
+  right: 20px;
+  height: 400px;
+  clip-path: polygon(20% 0%, 74% 0, 100% 85%, 4% 100%);
+}
+.contact-section .img2 {
+  position: absolute;
+  left: 50px;
+  top: 10px;
+  height: 200px;
+  clip-path: polygon(
+    50% 0%,
+    89% 14%,
+    99% 71%,
+    75% 100%,
+    14% 94%,
+    0% 60%,
+    16% 27%
+  );
+}
+.contact-section .img3 {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  height: 250px;
+  width: 250px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.contact-section p {
+  margin-top: 100px;
+}
+.contact-section h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 70px;
+  max-width: 550px;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rosybrown,
+    rgb(221, 167, 66),
+    lightyellow,
+    lightgreen,
+    skyblue,
+    rosybrown
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+.contact-section button {
+  padding: 10px 25px;
+  border: 1px solid gray;
+  background-color: black;
+  color: gray;
+  border-radius: 20px;
+  box-shadow: 0 0 5px lightblue;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-section button:hover {
+  box-shadow: 0 0 15px lightblue;
+  opacity: 0.7;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(211, 211, 211, 0.21);
+  backdrop-filter: blur(10px);
+  height: 100px;
+}
+.footer p {
+  margin: 0 20px;
+}
+.footer ul {
+  display: flex;
+  list-style: none;
+  margin-right: 140px;
+}
+.footer a {
+  text-decoration: none;
+  color: antiquewhite;
+  padding: 7px 7px;
+  border-radius: 50px;
+  border: 1px solid lightblue;
+  margin: 0 10px;
+}
+/* .autoBlur{
+
+} */
