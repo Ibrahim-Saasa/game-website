@@ -17,3 +17,26 @@ nextButton.addEventListener("click", function () {
     index = -1;
   }
 });
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  },
+  {
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  }
+);
+
+// Observe hero section
+const heroSection = document.querySelector(".hero-section");
+observer.observe(heroSection);
+
+document
+  .querySelectorAll(".blur-on-scroll")
+  .forEach((el) => el.classList.add("loaded"));
