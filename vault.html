@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/pages/vault.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Vault - AL-RUF</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <img src="img/logo.png" alt="logo">
+                <button onclick="window.location.href='products.html'">Products</button>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="head-right">
+                <a href="index.html">HOME</a>
+                <a href="products.html">PRODUCTS</a>
+                <a href="nexus.html">NEXUS</a>
+                <a href="vault.html" class="active">VAULT</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </header>
+
+        <section class="vault-hero blur-on-scroll">
+            <h1 class="gradient-text">VAULT</h1>
+            <p>Explore Rare Collections and Digital Treasures</p>
+        </section>
+
+        <section class="vault-intro blur-on-scroll">
+            <div class="vault-content">
+                <h2>Your Digital Vault</h2>
+                <p>The Vault is home to exclusive NFT collections, rare cosmetics, and limited-edition digital treasures
+                    from the Zenithal universe. Own, trade, and showcase your prized possessions.</p>
+            </div>
+        </section>
+
+        <section class="vault-section">
+            <div class="vault-filters">
+                <button class="vault-filter-tag active" data-filter="all">All Collections</button>
+                <button class="vault-filter-tag" data-filter="legendary">Legendary</button>
+                <button class="vault-filter-tag" data-filter="epic">Epic</button>
+                <button class="vault-filter-tag" data-filter="rare">Rare</button>
+                <button class="vault-filter-tag" data-filter="common">Common</button>
+            </div>
+
+            <div class="vault-grid" id="vaultGrid">
+                <!-- Collections will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="vault-info blur-on-scroll">
+            <h2>Why Collect?</h2>
+            <div class="info-cards-vault">
+                <div class="info-card-vault">
+                    <h3>💎 Rarity</h3>
+                    <p>Own exclusive digital assets with verified authenticity</p>
+                </div>
+                <div class="info-card-vault">
+                    <h3>🚀 Value</h3>
+                    <p>Your collections appreciate as the Zenithal universe grows</p>
+                </div>
+                <div class="info-card-vault">
+                    <h3>🎮 Utility</h3>
+                    <p>Use cosmetics and items across Zenithal games</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <p>&#169 Ibrahim Saasa 2025. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </section>
+    </div>
+
+    <!-- Collection Details Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="collectionModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody">
+                <!-- Collection details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/vault.js"></script>
+</body>
+
+</html>

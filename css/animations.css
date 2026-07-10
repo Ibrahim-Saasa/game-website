@@ -1,0 +1,148 @@
+/* ========== GRADIENT ANIMATION ========== */
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    rosybrown,
+    rgb(221, 167, 66),
+    lightyellow,
+    lightgreen,
+    skyblue,
+    rosybrown
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+/* ========== PARALLAX ANIMATION ========== */
+@keyframes autoTakeFullAnimation {
+  to {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    margin-bottom: 100px;
+  }
+}
+
+.autoTakeFull {
+  animation: autoTakeFullAnimation both;
+  animation-timeline: view(70% 65%);
+}
+
+/* ========== PAGE FADE IN ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ========== STAGGERED CARD ANIMATION ========== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* ========== PARALLAX SCROLL ========== */
+@keyframes parallaxMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+.parallax-bg {
+  animation: parallaxMove linear;
+  animation-timeline: scroll();
+}
+
+/* ========== 3D HOVER EFFECTS ========== */
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) perspective(1000px) rotateX(5deg);
+  box-shadow: 0 0 15px rgba(135, 206, 250, 0.6);
+}
+
+/* ========== MODAL ANIMATIONS ========== */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.modal-overlay {
+  animation: fadeBackground 0.3s ease-out;
+}

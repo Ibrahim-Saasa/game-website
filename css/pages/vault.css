@@ -1,0 +1,295 @@
+/* ========== VAULT PAGE HERO ========== */
+.vault-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(218, 112, 214, 0.2) 0%,
+    rgba(138, 43, 226, 0.2) 100%
+  );
+  margin-top: 80px;
+}
+
+.vault-hero h1 {
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 20px 0;
+}
+
+.vault-hero p {
+  font-size: 18px;
+  color: ivory;
+}
+
+/* ========== VAULT INTRO ========== */
+.vault-intro {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.vault-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.vault-content h2 {
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: ivory;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    to right,
+    rosybrown,
+    rgb(221, 167, 66),
+    lightyellow,
+    lightgreen,
+    skyblue,
+    rosybrown
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+.vault-content p {
+  font-size: 16px;
+  color: gray;
+  line-height: 1.8;
+}
+
+/* ========== VAULT SECTION ========== */
+.vault-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vault-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vault-filter-tag {
+  padding: 10px 25px;
+  border: 2px solid mediumorchid;
+  background-color: transparent;
+  color: ivory;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.vault-filter-tag:hover,
+.vault-filter-tag.active {
+  background-color: mediumorchid;
+  color: black;
+  box-shadow: 0 0 15px mediumorchid;
+}
+
+/* ========== VAULT GRID ========== */
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.vault-item {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid rgba(218, 112, 214, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.vault-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(218, 112, 214, 0.8);
+  box-shadow: 0 0 20px rgba(218, 112, 214, 0.5);
+}
+
+.vault-image {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #2d1b4e 0%, #1a0f33 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rarity-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rarity-legendary {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: black;
+}
+
+.rarity-epic {
+  background: linear-gradient(135deg, #9370db, #ba55d3);
+  color: white;
+}
+
+.rarity-rare {
+  background: linear-gradient(135deg, #4169e1, #6495ed);
+  color: white;
+}
+
+.rarity-common {
+  background-color: #696969;
+  color: white;
+}
+
+.vault-info {
+  padding: 15px;
+}
+
+.vault-info h3 {
+  font-size: 16px;
+  color: ivory;
+  margin-bottom: 6px;
+}
+
+.vault-info p {
+  font-size: 12px;
+  color: gray;
+  margin: 4px 0;
+}
+
+/* ========== VAULT INFO SECTION ========== */
+.vault-info {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vault-info h2 {
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: ivory;
+  margin-bottom: 50px;
+}
+
+.info-cards-vault {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.info-card-vault {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(218, 112, 214, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.info-card-vault:hover {
+  border-color: rgba(218, 112, 214, 0.8);
+  box-shadow: 0 0 15px rgba(218, 112, 214, 0.3);
+}
+
+.info-card-vault h3 {
+  font-size: 20px;
+  color: plum;
+  margin-bottom: 10px;
+}
+
+.info-card-vault p {
+  font-size: 14px;
+  color: gray;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .vault-hero {
+    height: 40vh;
+  }
+
+  .vault-hero h1 {
+    font-size: 50px;
+  }
+
+  .vault-filters {
+    gap: 10px;
+  }
+
+  .vault-filter-tag {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .vault-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .vault-info h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vault-hero h1 {
+    font-size: 30px;
+  }
+
+  .vault-hero p {
+    font-size: 14px;
+  }
+
+  .vault-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .vault-image {
+    height: 140px;
+    font-size: 40px;
+  }
+
+  .vault-info h2 {
+    font-size: 25px;
+  }
+
+  .info-cards-vault {
+    grid-template-columns: 1fr;
+  }
+}

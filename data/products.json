@@ -1,0 +1,86 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Alienware Aurora",
+      "category": "hardware",
+      "price": "$2,499",
+      "image": "img/placeholder-product.png",
+      "description": "High-performance gaming desktop with RTX 4090",
+      "specs": ["Intel i9", "RTX 4090", "64GB RAM", "2TB SSD"]
+    },
+    {
+      "id": 2,
+      "name": "Razer Blade 16",
+      "category": "hardware",
+      "price": "$3,199",
+      "image": "img/placeholder-product.png",
+      "description": "Ultra-thin gaming laptop with RTX 4080",
+      "specs": ["Intel i9", "RTX 4080", "32GB RAM", "1TB SSD"]
+    },
+    {
+      "id": 3,
+      "name": "Legion Pro Keyboard",
+      "category": "hardware",
+      "price": "$199",
+      "image": "img/placeholder-product.png",
+      "description": "Mechanical gaming keyboard with RGB lighting",
+      "specs": [
+        "Mechanical Switches",
+        "RGB Lighting",
+        "Wireless",
+        "Programmable"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Zenithal Legends",
+      "category": "games",
+      "price": "$59.99",
+      "image": "img/placeholder-product.png",
+      "description": "Epic fantasy MMORPG with rich storyline",
+      "specs": ["Multiplayer", "PvP", "Co-op", "Cross-Platform"]
+    },
+    {
+      "id": 5,
+      "name": "Digital Arena Pass",
+      "category": "merch",
+      "price": "$29.99",
+      "image": "img/placeholder-product.png",
+      "description": "Season pass with exclusive in-game items",
+      "specs": [
+        "12-Month Access",
+        "Exclusive Skins",
+        "Weekly Rewards",
+        "Premium Support"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Zenithal Merch Bundle",
+      "category": "merch",
+      "price": "$89.99",
+      "image": "img/placeholder-product.png",
+      "description": "Limited edition merchandise collection",
+      "specs": ["T-Shirt", "Hoodie", "Cap", "Stickers"]
+    },
+    {
+      "id": 7,
+      "name": "Ultimate Gaming Rig",
+      "category": "hardware",
+      "price": "$5,999",
+      "image": "img/placeholder-product.png",
+      "description": "Custom built ultimate gaming PC",
+      "specs": ["Intel i9-13900K", "RTX 4090", "128GB RAM", "4TB NVMe SSD"]
+    },
+    {
+      "id": 8,
+      "name": "Quantum Quest",
+      "category": "games",
+      "price": "$49.99",
+      "image": "img/placeholder-product.png",
+      "description": "Sci-fi adventure game with stunning visuals",
+      "specs": ["Single Player", "4K Support", "Ray Tracing", "120 FPS"]
+    }
+  ]
+}

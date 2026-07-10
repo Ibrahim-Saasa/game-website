@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/pages/products.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Products - AL-RUF</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <img src="img/logo.png" alt="logo">
+                <button onclick="window.location.href='products.html'">Products</button>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="head-right">
+                <a href="index.html">HOME</a>
+                <a href="products.html" class="active">PRODUCTS</a>
+                <a href="nexus.html">NEXUS</a>
+                <a href="vault.html">VAULT</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </header>
+
+        <section class="products-hero blur-on-scroll">
+            <h1 class="gradient-text">OUR PRODUCTS</h1>
+            <p>Discover the ultimate gaming experience with our curated collection</p>
+        </section>
+
+        <section class="products-section">
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all">All Products</button>
+                <button class="filter-tag" data-filter="hardware">Hardware</button>
+                <button class="filter-tag" data-filter="games">Games</button>
+                <button class="filter-tag" data-filter="merch">Merchandise</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="footer">
+            <p>&#169 Ibrahim Saasa 2025. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </section>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+
+</html>
