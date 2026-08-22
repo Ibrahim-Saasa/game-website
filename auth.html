@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/pages/auth.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Access Portal - AL-RUF</title>
+</head>
+
+<body class="auth-page">
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <img src="img/logo.png" alt="AL-RUF logo">
+                <button onclick="window.location.href='products.html'">Products</button>
+            </div>
+
+            <div class="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="head-right">
+                <a href="index.html">HOME</a>
+                <a href="products.html">PRODUCTS</a>
+                <a href="nexus.html">NEXUS</a>
+                <a href="vault.html">VAULT</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="auth.html" class="active">ACCESS</a>
+            </div>
+        </header>
+
+        <main class="auth-shell">
+            <section class="auth-intro blur-on-scroll">
+                <p class="auth-kicker">ZENITHAL ACCESS PORTAL</p>
+                <h1>Enter the <span>next era</span> of gaming.</h1>
+                <p class="auth-copy">Your gateway to the Nexus, the Vault, and every world still waiting to be
+                    discovered.</p>
+                <div class="auth-signal"><span></span> SYSTEMS ONLINE <strong>07</strong></div>
+            </section>
+
+            <section class="auth-panel blur-on-scroll" aria-label="Account access">
+                <div class="auth-tabs" role="tablist" aria-label="Account access modes">
+                    <button class="auth-tab active" id="loginTab" type="button" role="tab" aria-selected="true">Log
+                        in</button>
+                    <button class="auth-tab" id="signupTab" type="button" role="tab" aria-selected="false">Create
+                        account</button>
+                </div>
+
+                <div class="auth-heading">
+                    <p class="panel-label" id="formLabel">WELCOME BACK, PLAYER</p>
+                    <h2 id="formTitle">Continue your journey</h2>
+                    <p id="formDescription">Log in to access your saved worlds and collections.</p>
+                </div>
+
+                <form id="loginForm" class="auth-form" novalidate>
+                    <div class="auth-field">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" id="loginEmail" name="email" placeholder="pilot@zenithal.world"
+                            autocomplete="email" required>
+                        <small class="field-error"></small>
+                    </div>
+                    <div class="auth-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-wrap">
+                            <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                                autocomplete="current-password" required>
+                            <button class="password-toggle" type="button" aria-label="Show password"><i
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <small class="field-error"></small>
+                    </div>
+                    <div class="auth-options">
+                        <label class="check-control"><input type="checkbox" name="remember"><span>Remember
+                                me</span></label>
+                        <a href="#" class="muted-link">Forgot password?</a>
+                    </div>
+                    <button class="auth-submit" type="submit">Enter the Nexus <i
+                            class='bx bx-right-arrow-alt'></i></button>
+                </form>
+
+                <form id="signupForm" class="auth-form hidden" novalidate>
+                    <div class="auth-field">
+                        <label for="signupName">Player name</label>
+                        <input type="text" id="signupName" name="name" placeholder="Choose your callsign"
+                            autocomplete="name" required>
+                        <small class="field-error"></small>
+                    </div>
+                    <div class="auth-field">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" id="signupEmail" name="email" placeholder="pilot@zenithal.world"
+                            autocomplete="email" required>
+                        <small class="field-error"></small>
+                    </div>
+                    <div class="auth-field">
+                        <label for="signupPassword">Create password</label>
+                        <div class="password-wrap">
+                            <input type="password" id="signupPassword" name="password"
+                                placeholder="Minimum 8 characters" autocomplete="new-password" required>
+                            <button class="password-toggle" type="button" aria-label="Show password"><i
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <div class="password-meter"><span></span></div>
+                        <small class="field-hint">Use uppercase, lowercase, numbers, and symbols.</small>
+                        <small class="field-error"></small>
+                    </div>
+                    <label class="check-control terms-control"><input type="checkbox" name="terms" required><span>I
+                            agree to the <a href="#">Nexus terms</a></span></label>
+                    <button class="auth-submit" type="submit">Create my access <i
+                            class='bx bx-right-arrow-alt'></i></button>
+                </form>
+
+                <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+                <p class="secure-note"><i class='bx bx-lock-alt'></i> Secure access protocol ready for backend
+                    integration</p>
+            </section>
+        </main>
+
+        <section class="footer">
+            <p>&#169 Ibrahim Saasa 2025. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-meta'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </section>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>
