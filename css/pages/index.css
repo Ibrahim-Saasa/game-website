@@ -261,7 +261,9 @@
   object-fit: cover;
 }
 
-.card button {
+.card button,
+.card .card-link {
+  display: inline-block;
   position: absolute;
   bottom: 5%;
   left: 5%;
@@ -269,13 +271,15 @@
   border: 1px solid gray;
   background-color: black;
   color: gray;
+  text-decoration: none;
   border-radius: 20px;
   box-shadow: 0 0 5px lightblue;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.card button:hover {
+.card button:hover,
+.card .card-link:hover {
   box-shadow: 0 0 15px lightblue;
   opacity: 0.7;
 }

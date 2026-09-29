@@ -39,58 +39,138 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 10px;
+  min-height: 68px;
+  padding: 8px clamp(16px, 3vw, 40px);
   z-index: 99;
-  background-color: grey;
-  backdrop-filter: blur(10px);
-  opacity: 0.6;
-  transition: opacity var(--transition-speed);
+  background: rgba(9, 12, 17, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(18px) saturate(140%);
+  transition:
+    background-color var(--transition-speed),
+    box-shadow var(--transition-speed);
 }
 
 header:hover {
-  opacity: 0.8;
+  background-color: rgba(12, 16, 22, 0.96);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.2);
 }
 
 .head-left {
   display: flex;
   align-items: center;
+  gap: 14px;
 }
 
 .head-left img {
-  width: 75px;
-  height: 75px;
-  margin-right: 20px;
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .head-left button {
-  border: none;
-  padding: 10px 30px;
-  border-radius: 20px;
+  min-height: 36px;
+  padding: 0 15px;
+  border: 1px solid rgba(120, 198, 235, 0.28);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #eef2f4;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: var(--transition-speed);
+  transition:
+    background-color var(--transition-speed),
+    border-color var(--transition-speed);
 }
 
 .head-left button:hover {
-  opacity: 0.7;
+  background: rgba(120, 198, 235, 0.12);
+  border-color: rgba(120, 198, 235, 0.58);
 }
 
 .head-right {
+  align-items: center;
   display: flex;
+  gap: 3px;
 }
 
 .head-right a {
   text-decoration: none;
-  padding-left: 25px;
-  color: var(--light-text);
-  font-size: 15px;
-  transition: color var(--transition-speed);
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: rgba(238, 242, 244, 0.72);
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    color var(--transition-speed),
+    background-color var(--transition-speed);
   position: relative;
+}
+
+.head-right a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
 }
 
 .head-right a:hover,
 .head-right a.active {
-  color: var(--secondary-color);
+  color: #8bd8ef;
+}
+
+.head-right a.active {
+  background: rgba(120, 198, 235, 0.1);
+}
+
+.head-right a[href="profile.html"],
+.head-right a[href="auth.html"] {
+  border: 1px solid rgba(115, 210, 167, 0.34);
+  color: #a8e6c9;
+  margin-left: 5px;
+}
+
+.head-right a[href="profile.html"]:hover,
+.head-right a[href="auth.html"]:hover {
+  background: rgba(115, 210, 167, 0.12);
+  border-color: rgba(115, 210, 167, 0.65);
+  color: #d5f6e5;
+}
+
+.hamburger {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  height: 42px;
+  justify-content: center;
+  margin: 0;
+  width: 42px;
+}
+
+.hamburger span {
+  background: #eef2f4;
+  border-radius: 2px;
+  height: 2px;
+  margin: 0;
+  transition:
+    transform var(--transition-speed),
+    opacity var(--transition-speed);
+  width: 18px;
+}
+
+.hamburger.active span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ========== FOOTER ========== */

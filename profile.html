@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css?v=2">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css?v=3">
+    <link rel="stylesheet" href="./css/pages/profile.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Player Profile - AL-RUF</title>
+</head>
+
+<body class="profile-page">
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <img src="img/logo.png" alt="AL-RUF logo">
+                <button onclick="window.location.href='products.html'">Products</button>
+            </div>
+            <div class="hamburger" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="head-right" aria-label="Main navigation">
+                <a href="index.html">HOME</a>
+                <a href="products.html">PRODUCTS</a>
+                <a href="nexus.html">NEXUS</a>
+                <a href="vault.html">VAULT</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="profile.html" class="active">PROFILE</a>
+            </nav>
+        </header>
+
+        <main class="profile-shell">
+            <section class="profile-banner">
+                <div class="profile-identity">
+                    <div class="avatar-frame">
+                        <img id="profileAvatar" alt="Player profile picture" hidden>
+                        <span id="avatarInitials" aria-hidden="true">--</span>
+                    </div>
+                    <div>
+                        <p class="profile-kicker">PLAYER PROFILE</p>
+                        <h1 id="profileName">Loading profile...</h1>
+                        <p id="profileEmail" class="profile-email"></p>
+                        <p id="profileSince" class="profile-since"></p>
+                    </div>
+                </div>
+                <div class="profile-stats" aria-label="Collection totals">
+                    <div><strong id="wishlistCount">0</strong><span>WISHLISTED</span></div>
+                    <div><strong id="purchaseCount">0</strong><span>DEMO ORDERS</span></div>
+                </div>
+            </section>
+
+            <section class="profile-settings" aria-labelledby="settingsTitle">
+                <div class="section-heading">
+                    <p class="profile-kicker">ACCOUNT SETTINGS</p>
+                    <h2 id="settingsTitle">Your callsign, your look.</h2>
+                </div>
+                <form id="profileForm" class="profile-form">
+                    <label class="avatar-picker" for="avatarInput">
+                        <i class="bx bx-camera" aria-hidden="true"></i>
+                        <span>Choose profile image</span>
+                        <small>JPEG, PNG, WebP · up to 2 MB</small>
+                    </label>
+                    <input id="avatarInput" name="avatar" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+                    <label class="name-field" for="playerNameInput">
+                        <span>Player name</span>
+                        <input id="playerNameInput" name="player_name" type="text" maxlength="50" required>
+                    </label>
+                    <button class="profile-save" type="submit"><i class="bx bx-save" aria-hidden="true"></i> Save
+                        profile</button>
+                </form>
+                <p id="profileStatus" class="profile-status" role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="library-section" aria-labelledby="libraryTitle">
+                <div class="library-heading">
+                    <div class="section-heading">
+                        <p class="profile-kicker">YOUR LIBRARY</p>
+                        <h2 id="libraryTitle">Things worth keeping.</h2>
+                    </div>
+                    <div class="library-tabs" role="tablist" aria-label="Saved products and purchases">
+                        <button class="library-tab active" id="wishlistTab" type="button" role="tab"
+                            aria-selected="true">Wishlist</button>
+                        <button class="library-tab" id="purchasesTab" type="button" role="tab"
+                            aria-selected="false">Demo purchases</button>
+                    </div>
+                </div>
+                <p class="demo-note">Demo purchases are saved to your history for this project; no payment is processed.
+                </p>
+                <div id="libraryGrid" class="library-grid" aria-live="polite"></div>
+            </section>
+
+            <div class="profile-actions">
+                <a href="products.html"><i class="bx bx-store-alt" aria-hidden="true"></i> Browse products</a>
+                <button id="logoutButton" type="button"><i class="bx bx-log-out" aria-hidden="true"></i> Sign
+                    out</button>
+            </div>
+        </main>
+
+        <section class="footer">
+            <p>&#169 Ibrahim Saasa 2025. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#"><i class="bx bxl-youtube"></i></a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                <li><a href="#"><i class="bx bxl-meta"></i></a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                <li><a href="#"><i class="bx bxl-github"></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </section>
+    </div>
+    <script src="./js/common.js?v=2"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/profile.js"></script>
+</body>
+
+</html>

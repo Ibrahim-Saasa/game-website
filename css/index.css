@@ -13,47 +13,7 @@ body {
   position: relative;
 }
 header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 10px;
-  z-index: 99;
-  background-color: grey;
-  backdrop-filter: blur(10px);
-  opacity: 0.6;
-}
-.head-left {
-  display: flex;
-  align-items: center;
-}
-.head-left img {
-  width: 75px;
-  height: 75px;
-  margin-right: 20px;
-}
-.head-left button {
-  border: none;
-  padding: 10px 30px;
-  border-radius: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.head-left button:hover {
-  opacity: 0.7;
-}
-.head-right {
-  display: flex;
-}
-.head-right a {
-  text-decoration: none;
-  padding-left: 25px;
-  color: ivory;
-  font-size: 15px;
+  position: fixed;
 }
 .hero-section {
   position: relative;
@@ -62,7 +22,9 @@ header {
   overflow: hidden;
   filter: blur(40px);
   opacity: 0;
-  transition: filter 0.5s ease, opacity 0.5s ease;
+  transition:
+    filter 0.5s ease,
+    opacity 0.5s ease;
 }
 .hero-section.visible {
   filter: blur(0);
@@ -452,7 +414,9 @@ header {
   animation-range: 100px 800px; 
 } */
 .blur-on-scroll {
-  transition: filter 0.1s ease-out, opacity 0.1s ease-out;
+  transition:
+    filter 0.1s ease-out,
+    opacity 0.1s ease-out;
   will-change: filter, opacity;
 }
 

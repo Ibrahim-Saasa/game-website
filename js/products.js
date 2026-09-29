@@ -23,6 +23,7 @@ function renderProducts(products) {
   products.forEach((product, index) => {
     const card = document.createElement("div");
     card.className = "product-card";
+    card.dataset.productId = product.id;
     card.setAttribute("data-category", product.category);
     card.style.animationDelay = `${index * 0.1}s`;
 
@@ -36,7 +37,7 @@ function renderProducts(products) {
         <div class="product-specs">
           <p>${product.specs.join(" • ")}</p>
         </div>
-        <button class="product-button" onclick="openProductModal(${product.id})">View Details</button>
+        <button class="product-button" type="button" data-product-id="${product.id}">View Details</button>
       </div>
     `;
 
@@ -115,23 +116,97 @@ function openProductModal(productId) {
   if (!product) return;
 
   const modalBody = document.getElementById("modalBody");
+  const safe = (value) =>
+    String(value).replace(
+      /[&<>"']/g,
+      (character) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[character],
+    );
   modalBody.innerHTML = `
-    <h2>${product.name}</h2>
-    <p class="product-category" style="margin-bottom: 15px;">${product.category}</p>
-    <p style="color: gray; margin-bottom: 15px;">${product.description}</p>
-    <h3 style="color: lightgreen; margin: 20px 0 10px 0;">${product.price}</h3>
+    <h2>${safe(product.name)}</h2>
+    <p class="product-category" style="margin-bottom: 15px;">${safe(product.category)}</p>
+    <p style="color: gray; margin-bottom: 15px;">${safe(product.description)}</p>
+    <h3 style="color: lightgreen; margin: 20px 0 10px 0;">${safe(product.price)}</h3>
     <h4 style="color: skyblue; margin: 20px 0 10px 0;">Specifications:</h4>
     <ul style="color: lightblue; margin-left: 20px; line-height: 1.8;">
-      ${product.specs.map((spec) => `<li>${spec}</li>`).join("")}
+      ${product.specs.map((spec) => `<li>${safe(spec)}</li>`).join("")}
     </ul>
-    <button class="btn-primary" style="margin-top: 20px; width: 100%;">Add to Cart</button>
+    <div class="product-actions">
+      <button type="button" class="product-library-action" data-action="wishlist_add" data-product-id="${product.id}"><i class="bx bx-bookmark-plus" aria-hidden="true"></i> Save to wishlist</button>
+      <button type="button" class="product-library-action purchase-action" data-action="demo_purchase" data-product-id="${product.id}"><i class="bx bx-receipt" aria-hidden="true"></i> Record demo purchase</button>
+    </div>
+    <p class="product-action-status" role="status" aria-live="polite"></p>
   `;
 
-  const modal = new Modal("#productModal");
-  modal.open();
+  document.getElementById("productModal").style.display = "flex";
+  document.getElementById("modalOverlay").style.display = "block";
+}
+
+async function handleProductLibraryAction(button) {
+  const action = button.dataset.action;
+  if (
+    action === "demo_purchase" &&
+    !window.confirm(
+      "Record this as a demo purchase? No payment will be processed.",
+    )
+  ) {
+    return;
+  }
+
+  const status = document.querySelector(".product-action-status");
+  button.disabled = true;
+  status.textContent = "Updating your library...";
+  try {
+    const response = await fetch("./api/library.php", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action,
+        product_id: Number(button.dataset.productId),
+      }),
+    });
+    const result = await response.json();
+    if (response.status === 401) {
+      window.location.assign("auth.html");
+      return;
+    }
+    if (!response.ok)
+      throw new Error(result.message || "Could not update your library.");
+    status.textContent = result.message;
+    status.style.color = "#73d2a7";
+  } catch (error) {
+    status.textContent = error.message || "Could not update your library.";
+    status.style.color = "#e37d8e";
+  } finally {
+    button.disabled = false;
+  }
 }
 
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("productModal");
+  const overlay = document.getElementById("modalOverlay");
+  const productsGrid = document.getElementById("productsGrid");
+  const closeModal = () => {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+  };
+  modal.querySelector(".modal-close").addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+  productsGrid.addEventListener("click", (event) => {
+    const card = event.target.closest(".product-card");
+    if (card) openProductModal(Number(card.dataset.productId));
+  });
+  document.getElementById("modalBody").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-action]");
+    if (button) handleProductLibraryAction(button);
+  });
   loadProducts();
 });

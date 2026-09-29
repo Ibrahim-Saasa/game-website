@@ -45,12 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return "";
   }
 
-  function handleSubmit(event, signup) {
+  async function handleSubmit(event, signup) {
     event.preventDefault();
     const form = signup ? signupForm : loginForm;
     const email = form.querySelector('input[name="email"]');
     const password = form.querySelector('input[name="password"]');
     const name = form.querySelector('input[name="name"]');
+    status.textContent = "";
     let valid = true;
 
     if (name && !name.value.trim()) {
@@ -70,10 +71,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (!valid) return;
 
-    status.style.color = "#73d2a7";
-    status.textContent = signup
-      ? "Access profile ready for secure registration."
-      : "Login details validated. Backend connection pending.";
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    status.style.color = "#78c6eb";
+    status.textContent = signup ? "Creating your account..." : "Signing in...";
+
+    try {
+      const response = await fetch("./api/auth.php", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: signup ? "register" : "login",
+          name: name?.value.trim(),
+          email: email.value.trim(),
+          password: password.value,
+          termsAccepted: signup
+            ? form.querySelector('input[name="terms"]').checked
+            : undefined,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok)
+        throw new Error(result.message || "Authentication failed.");
+
+      status.style.color = "#73d2a7";
+      status.textContent = signup
+        ? `Account created. You are signed in as ${result.user.name}.`
+        : `Welcome back, ${result.user.name}.`;
+      window.setTimeout(() => window.location.assign("products.html"), 450);
+    } catch (error) {
+      status.style.color = "#e37d8e";
+      status.textContent =
+        error.message || "Could not connect to the account service.";
+    } finally {
+      submitButton.disabled = false;
+    }
   }
 
   document.querySelectorAll(".password-toggle").forEach((button) => {

@@ -1,21 +1,35 @@
-/* ========== TABLET BREAKPOINT (768px) ========== */
-@media (max-width: 768px) {
-  /* Navbar - Hamburger Menu */
+@media (max-width: 950px) {
   header {
-    flex-wrap: wrap;
+    min-height: 64px;
+    padding: 8px 16px;
+  }
+
+  .head-left img {
+    height: 44px;
+    width: 44px;
+  }
+
+  .head-left button {
+    min-height: 34px;
+    padding: 0 12px;
   }
 
   .head-right {
+    align-items: stretch;
+    background: rgba(12, 16, 22, 0.98);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
     display: none;
     flex-direction: column;
+    gap: 3px;
+    left: auto;
+    padding: 8px;
     position: absolute;
-    top: 95px;
-    left: 0;
-    right: 0;
-    background-color: grey;
-    backdrop-filter: blur(10px);
-    width: 100%;
-    padding: 20px 0;
+    right: 16px;
+    top: calc(100% + 8px);
+    width: min(320px, calc(100vw - 32px));
   }
 
   .head-right.mobile-active {
@@ -23,24 +37,23 @@
   }
 
   .head-right a {
-    padding: 10px 20px;
-    display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0;
+    display: flex;
+    font-size: 13px;
+    margin: 0;
+    padding: 12px 13px;
   }
 
   .hamburger {
     display: flex;
-    flex-direction: column;
     cursor: pointer;
-    margin-right: 20px;
   }
+}
 
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: ivory;
-    margin: 5px 0;
-    transition: 0.3s;
+/* ========== TABLET BREAKPOINT (768px) ========== */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: nowrap;
   }
 
   /* Hero Section */
@@ -219,7 +232,8 @@
     max-width: 150px;
   }
 
-  .card button {
+  .card button,
+  .card .card-link {
     padding: 8px 15px;
     font-size: 10px;
     bottom: 10px;
